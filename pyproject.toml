@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "remarkable-russian-keyboard"
+version = "0.1.0.dev0"
+description = "Development installer for Russian keyboards on reMarkable 2 OS 3.29.1.0"
+requires-python = ">=3.11"
+dependencies = ["zstandard==0.25.0"]
+
+[project.optional-dependencies]
+test = ["pytest==9.0.2"]
+
+[project.scripts]
+remarkable-russian-keyboard = "rk_installer.cli:main"
+
+[tool.setuptools.package-data]
+rk_installer = ["device.sh"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
